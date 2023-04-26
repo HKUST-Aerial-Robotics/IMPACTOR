@@ -2,9 +2,9 @@
 ## Update
 - We will release our code as soon as possible.
 ## Introduction
-<div style="display:flex; flex-wrap:wrap; justify-content:center;">
-  <img src="images/gif-scenario_1.gif" style="max-width:50%; margin:5px;">
-  <img src="images/gif-scenario_2.gif" style="max-width:50%; margin:5px;">
+<div align=center>
+  <img src="images/gif-scenario_1.gif" width=400px>
+  <img src="images/gif-scenario_2.gif" width=400px>
 </div>
 
 This repository contains the source code of the impact-aware planning and control algorithms described in our paper "<u>__IMP__</u>act-<u>__A__</u>ware Planning and <u>__C__</u>on<u>__T__</u>rol f<u>__O__</u>r Aerial <u>__R__</u>obots with Suspended Payload."
