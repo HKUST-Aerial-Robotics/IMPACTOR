@@ -9,7 +9,7 @@
 
 This repository contains the source code of the impact-aware planning and control algorithms described in our paper "<u>__IMP__</u>act-<u>__A__</u>ware Planning and <u>__C__</u>on<u>__T__</u>rol f<u>__O__</u>r Aerial <u>__R__</u>obots with Suspended Payload."
 
-__Authors__: Haokun Wang<sup>1$\dag$</sup>, Haojia Li<sup>1$\dag$</sup>, [Boyu Zhou](https://boyuzhou.net/)<sup>2</sup>, [Fei Gao](http://zju-fast.com/fei-gao/)<sup>3*</sup> and [Shaojie Shen](https://uav.hkust.edu.hk/group/)<sup>1</sup>
+__Authors__: Haokun Wang<sup>1$$\dag$$</sup>, Haojia Li<sup>1$$\dag$$</sup>, [Boyu Zhou](https://boyuzhou.net/)<sup>2</sup>, [Fei Gao](http://zju-fast.com/fei-gao/)<sup>3*</sup> and [Shaojie Shen](https://uav.hkust.edu.hk/group/)<sup>1</sup>
 
 <small><sup>1</sup>[HKUST Aerial Robotics Group](https://uav.hkust.edu.hk/), <sup>2</sup> [SYSU STAR Lab](https://boyuzhou.net/), <sup>3</sup> [ZJU FAST Lab](http://zju-fast.com/), .</small>
 
