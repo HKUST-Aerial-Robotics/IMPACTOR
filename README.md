@@ -1,6 +1,6 @@
 # IMPACTOR
 ## Update
-- We will release our code as soon as possible.
+- We will release our code soon.
 ## Introduction
 <div align=center>
   <img src="images/gif-scenario_1.gif" width=400px>
