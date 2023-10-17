@@ -15,7 +15,7 @@ __Authors__: Haokun Wang<sup>1+</sup>, Haojia Li<sup>1+</sup>, [Boyu Zhou](https
 
 __Paper__: [arXiv]()
 
-__Supplementary Video__: [YouTube](), [Bilibili]()
+__Supplementary Video__: [YouTube](https://youtu.be/k_XGQyrNh9I?si=K2775t8ui0WClqqv), [Bilibili](https://www.bilibili.com/video/BV1zg4y1L7dC/?share_source=copy_web&vd_source=4a496bdfc1980dd80977a281d5c963c0)
 
 __Project Website__: [Homepage](https://sites.google.com/view/suspended-payload/)
 
