@@ -41,20 +41,20 @@ To the best knowledge of us, we are the first to successfully perform multiple m
 ## Demonstrations
 - Visualization using RViz.
 <div align=center>
-  <img src="images/gif-benchmark_0.gif" width=250px>
-  <img src="images/gif-benchmark_1.gif" width=250px>
-  <img src="images/gif-benchmark_2.gif" width=250px>
-  <img src="images/gif-benchmark_3.gif" width=250px>
+  <img src="images/gif-benchmark_0.gif" width=200px>
+  <img src="images/gif-benchmark_1.gif" width=200px>
+  <img src="images/gif-benchmark_2.gif" width=200px>
+  <img src="images/gif-benchmark_3.gif" width=200px>
 </div>
 <div align=center>
-  <img src="images/gif-benchmark_4.gif" width=250px>
-  <img src="images/gif-benchmark_5.gif" width=250px>
-  <img src="images/gif-benchmark_6.gif" width=250px>
-  <img src="images/gif-benchmark_7.gif" width=250px>
+  <img src="images/gif-benchmark_4.gif" width=200px>
+  <img src="images/gif-benchmark_5.gif" width=200px>
+  <img src="images/gif-benchmark_6.gif" width=200px>
+  <img src="images/gif-benchmark_7.gif" width=200px>
 </div>
 
 - Simulations using Drake.
 <div align=center>
-  <video src="images/drake_scenario_1.mp4" controls="controls" width="500"></video>
-  <video src="images/drake_scenario_2.mp4" controls="controls" width="500"></video>
+  <video src="images/drake_scenario_1.mp4" controls="controls" width="400"></video>
+  <video src="images/drake_scenario_2.mp4" controls="controls" width="400"></video>
 </div>
