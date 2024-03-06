@@ -55,6 +55,6 @@ To the best knowledge of us, we are the first to successfully perform multiple m
 
 - Simulations using Drake.
 <div align=center>
-  <video src="images/drake_scenario_1.mp4" controls="controls" width="400"></video>
-  <video src="images/drake_scenario_2.mp4" controls="controls" width="400"></video>
+  <img src="images/gif-sim_scenario_1.gif" width=400px>
+  <img src="images/gif-sim_scenario_2.gif" width=400px>
 </div>
