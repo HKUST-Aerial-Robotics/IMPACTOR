@@ -27,14 +27,7 @@ __Supplementary Video__: [YouTube](https://youtu.be/k_XGQyrNh9I?si=K2775t8ui0WCl
 
 __Project Website__: [Homepage](https://sites.google.com/view/suspended-payload/)
 
-_Abstract_: A quadrotor with a cable-suspended payload imposes great challenges in impact-aware planning and control. 
-This joint system has dual motion modes, depending on whether the cable is slack or not, presents complicated dynamics. 
-Therefore, generating feasible agile flight while preserving the retractable nature of the cable is still a challenging task. 
-In this paper, we propose a novel impact-aware planning and control framework that resolves potential impacts caused by motion mode switching. 
-Our method leverages the augmented Lagrangian method (ALM) to solve an optimization problem with nonlinear complementarity constraints (ONCC), which ensures trajectory feasibility with high accuracy while maintaining efficiency. 
-We further propose a hybrid nonlinear model predictive control method to address the model mismatch issue in agile flight. 
-Our methods have been fully validated in both simulation and experiment, demonstrating superior performance compared to existing approaches. 
-To the best knowledge of us, we are the first to successfully perform multiple motion mode switching for aerial payload systems in real-world experiments.
+_Abstract_: A quadrotor with a cable-suspended payload imposes great challenges in impact-aware planning and control. This joint system has dual motion modes, depending on whether the cable is slack or not, and presents complicated dynamics. Therefore, generating feasible agile flight while preserving the retractable nature of the cable is still a challenging task. In this paper, we propose a novel impact-aware planning and control framework that resolves potential impacts caused by motion mode switching. Our method leverages the augmented Lagrangian method (ALM) to solve an optimization problem with nonlinear complementarity constraints (ONCC), which ensures trajectory feasibility with high accuracy while maintaining efficiency. We further propose a hybrid nonlinear model predictive control method to address the model mismatch issue in agile flight. Our methods have been comprehensively validated in both simulation and experiments, demonstrating superior performance compared to existing approaches. To the best of our knowledge, we are the first to successfully perform automatic multiple motion mode switching for aerial payload systems in real-world experiments.
 
 ![SystemDiagram](images/fig-system_diagram.png)
 
