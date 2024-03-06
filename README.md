@@ -1,19 +1,27 @@
-# IMPACTOR
-## Update
-- We will release our code soon.
+# IMPACTOR: <u>IMP</u>act-<u>A</u>ware Planning and <u>C</u>on<u>T</u>r<u>O</u>l for Aerial <u>R</u>obots with Suspended Payloads
+## News
+- Updated paper information.
+## Content
+* [TODO_List](#todo)
+* [Introduction](#introduction)
+## TODO
+- [ ] Update user guide and preprint information.
+- [ ] Release impact-aware planning algorithms.
+- [ ] Release simulation code. 
+- [ ] Release hybrid MPC code.
 ## Introduction
 <div align=center>
   <img src="images/gif-scenario_1.gif" width=400px>
   <img src="images/gif-scenario_2.gif" width=400px>
 </div>
 
-This repository contains the source code of the impact-aware planning and control algorithms described in our paper "<u>__IMP__</u>act-<u>__A__</u>ware Planning and <u>__C__</u>on<u>__T__</u>rol f<u>__O__</u>r Aerial <u>__R__</u>obots with Suspended Payload."
+This repository contains the source code of the impact-aware planning and control algorithms described in our paper "Impact-Aware Planning and Control for Aerial Robots with Suspended Payloads." accepted by _IEEE Transactions on Robotics (T-RO)_, 2024.
 
-__Authors__: Haokun Wang<sup>1+</sup>, Haojia Li<sup>1+</sup>, [Boyu Zhou](https://boyuzhou.net/)<sup>2*</sup>, [Fei Gao](http://zju-fast.com/fei-gao/)<sup>3*</sup> and [Shaojie Shen](https://uav.hkust.edu.hk/group/)<sup>1</sup>
+__Authors__: [Haokun Wang](https://haokun-wang.com)<sup>1+</sup>, Haojia Li<sup>1+</sup>, [Boyu Zhou](https://boyuzhou.net/)<sup>2*</sup>, [Fei Gao](http://zju-fast.com/fei-gao/)<sup>3*</sup> and [Shaojie Shen](https://uav.hkust.edu.hk/group/)<sup>1</sup>
 
 <small><sup>1</sup>[HKUST Aerial Robotics Group](https://uav.hkust.edu.hk/), <sup>2</sup> [SYSU STAR Lab](https://boyuzhou.net/), <sup>3</sup> [ZJU FAST Lab](http://zju-fast.com/), .</small>
 
-__Paper__: [arXiv]()
+__Paper__: arXiv
 
 __Supplementary Video__: [YouTube](https://youtu.be/k_XGQyrNh9I?si=K2775t8ui0WClqqv), [Bilibili](https://www.bilibili.com/video/BV1zg4y1L7dC/?share_source=copy_web&vd_source=4a496bdfc1980dd80977a281d5c963c0)
 
@@ -30,3 +38,23 @@ To the best knowledge of us, we are the first to successfully perform multiple m
 
 ![SystemDiagram](images/fig-system_diagram.png)
 
+## Demonstrations
+- Visualization using RViz.
+<div align=center>
+  <img src="images/gif-benchmark_0.gif" width=250px>
+  <img src="images/gif-benchmark_1.gif" width=250px>
+  <img src="images/gif-benchmark_2.gif" width=250px>
+  <img src="images/gif-benchmark_3.gif" width=250px>
+</div>
+<div align=center>
+  <img src="images/gif-benchmark_4.gif" width=250px>
+  <img src="images/gif-benchmark_5.gif" width=250px>
+  <img src="images/gif-benchmark_6.gif" width=250px>
+  <img src="images/gif-benchmark_7.gif" width=250px>
+</div>
+
+- Simulations using Drake.
+<div align=center>
+  <video src="images/drake_scenario_1.mp4" controls="controls" width="500"></video>
+  <video src="images/drake_scenario_2.mp4" controls="controls" width="500"></video>
+</div>
