@@ -1,0 +1,14 @@
+<launch>
+    <arg name="task_name" default="payload"/>
+    <!-- rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" 
+          args="-d $(find impact_plan)/launch/impactor.rviz" required="true" />
+
+    <!-- scenario parameters -->
+    <node pkg ="env_generator" name ="env_generator" type ="env_generator" output = "screen" >    
+        <rosparam file="$(find impact_plan)/launch/scenario1.yaml" command="load"/>
+    </node>
+
+    <!-- impactor -->
+    <include file="$(find impact_plan)/launch/$(arg task_name)_plan.launch"/>
+</launch>

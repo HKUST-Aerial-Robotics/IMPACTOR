@@ -1,0 +1,66 @@
+alm:
+  max_vel_quad: 10.0
+  max_acc_quad: 20.0
+  max_jer_quad: 40.0
+  max_acc_load: 20.0
+  max_theta: 1.2
+  max_thrust: 50.0
+  min_thrust: 4.0
+  max_omg: 4.0
+  max_tension: 50.0
+  min_tension: 0.0
+  min_distance: 0.2
+  init_vel: 0.8
+
+  weight_energy: 1.0
+  weight_t: 1.0
+  weight_obs: 1.0
+  weight_vel_quad: 1.0e-6
+  weight_acc_quad: 1.0e-6
+  weight_jer_quad: 1.0e-6
+  weight_acc_load: 1.0e-6
+  weight_theta: 1.0e-6
+  weight_thrust: 1.0e-1
+  weight_omg: 1.0e-1
+  weight_ten: 1.0e-6
+  weight_dis: 1.0e-1
+  weight_dyn: 1.0
+  weight_com: 1.0
+
+  flag_obs: 1
+  flag_vel_quad: 1
+  flag_acc_quad: 0
+  flag_jer_quad: 1
+  flag_acc_load: 0
+  flag_theta: 1
+  flag_thrust: 1
+  flag_omg: 1
+  flag_ten: 1
+  flag_dis: 1
+  flag_dyn: 1
+  flag_com: 1
+
+  integral_intervs: 3
+  smoothing_eps: 0.0
+  opt_rho: 1000.0
+  opt_gamma: 1.0
+  opt_rho_max: 1.0e+6
+  opt_max_iter: 10
+  sample_num: 89
+  opt_eq_constraints_eps: 1.0e-2
+  opt_ineq_constraints_eps: 5.0e-2
+  opt_precision_eps: 1.0e-1
+  opt_scaling_wf_min: 1.0e-6
+  opt_scaling_wc_min: 1.0e-2
+
+  debug_flag: false
+
+lbfgs:
+  mem_size: 512
+  past: 0
+  delta: 1.0e-6
+  min_step: 1.0e-32
+  g_epsilon: 1.0e-2
+  s_curv_coeff: 0.9
+  f_dec_coeff: 1.0e-4
+  max_linesearch: 1024

@@ -1,0 +1,91 @@
+<launch>
+  <arg name="init_x" default="-9.8"/>
+  <arg name="init_y" default="1.0"/>
+  <arg name="init_z" default="1.0"/> 
+  <arg name="obj_num" default="1" />
+  <arg name="map_size_x_" default="20"/>
+  <arg name="map_size_y_" default="20"/>
+  <arg name="map_size_z_" default="10.0"/>
+  <arg name="c_num" default="10"/>
+  <arg name="p_num"  default="80"/>
+  <arg name="drone_odometry_topic"  default="/drone0/odom"/>
+
+  <node pkg ="env_generator" name ="random_forest" type ="random_forest" output = "screen">    
+    <remap from="~odometry"   to="$(arg drone_odometry_topic)"/>    
+    <param name="init_state_x"   value="$(arg init_x)"/>
+    <param name="init_state_y"   value="$(arg init_y)"/>
+    <param name="map/x_size"     value="$(arg map_size_x_)" />
+    <param name="map/y_size"     value="$(arg map_size_y_)" />
+    <param name="map/z_size"     value="$(arg map_size_z_)" />
+    <param name="map/resolution" value="0.1"/>        
+
+    <param name="ObstacleShape/seed" value="-1"/>
+    <param name="map/obs_num"    value="$(arg p_num)"/>
+    <param name="ObstacleShape/lower_rad" value="0.5"/>
+    <param name="ObstacleShape/upper_rad" value="0.7"/>
+    <param name="ObstacleShape/lower_hei" value="0.0"/>
+    <param name="ObstacleShape/upper_hei" value="3.0"/>        
+
+    <param name="map/circle_num" value="$(arg c_num)"/>        
+    <param name="ObstacleShape/radius_l" value="0.7"/>        
+    <param name="ObstacleShape/radius_h" value="0.5"/>        
+    <param name="ObstacleShape/z_l" value="0.7"/>        
+    <param name="ObstacleShape/z_h" value="0.8"/>        
+    <param name="ObstacleShape/theta" value="0.5"/>        
+
+    <param name="sensing/radius" value="5.0"/>        
+    <param name="sensing/rate"   value="10.0"/>        
+  </node>
+
+  <node pkg="local_sensing_node" type="pcl_render_node" name="pcl_render_node" output="screen">
+        <rosparam command="load" file="$(find local_sensing_node)/params/camera.yaml" />
+        <param name="sensing_horizon"  value="10.0" />
+        <param name="sensing_rate"     value="30.0"/>
+        <param name="estimation_rate"  value="30.0"/>
+
+        <param name="map/x_size"     value="$(arg map_size_x_)"/>
+        <param name="map/y_size"     value="$(arg map_size_y_)"/>
+        <param name="map/z_size"     value="$(arg map_size_z_)"/>
+
+        <remap from="~global_map" to="/env_generator/global_cloud"/>
+        <remap from="~odometry"   to="$(arg drone_odometry_topic)"/>
+  </node>
+
+
+<group ns="drone0">
+
+  <node pkg="nodelet" type="nodelet" name="manager" args="manager" output="screen"/>
+
+  <node pkg="nodelet" type="nodelet" name="so3_quadrotor"
+    args="load so3_quadrotor/Nodelet manager" output="screen">
+    <param name="init_x" value="$(arg init_x)"/>
+    <param name="init_y" value="$(arg init_y)"/>
+    <param name="init_z" value="$(arg init_z)"/>
+
+    <rosparam file="$(find uav_simulator)/config/so3_quadrotor.yaml"/>
+    <remap from="~odom" to="odom"/>
+    <remap from="~imu"  to="imu" />
+    <remap from="~so3cmd" to="so3cmd"/>
+    <remap from="~vis" to="vis"/>
+    <remap from="~odom_payload" to="odom_payload"/>
+    <remap from="~imu_payload"  to="imu_payload" />
+  </node>
+
+    <!-- <node pkg="impact_control" type="mpc_controller_node" name="mpc_controller_node" output="screen">
+      <rosparam command="load" file="$(find impact_control)/config/mpc.yaml" />
+      <rosparam command="load" file="$(find impact_control)/config/model.yaml" />
+      <remap from="~odom" to="odom"/>
+      <remap from="~cmd" to="/position_cmd"/>
+      <remap from="/mavros/imu/data" to="imu"/>
+      <remap from="~payload_imu/data" to="imu_payload"/>
+      <remap from="~payload_odom" to="odom_payload"/>
+		  <remap from="~traj" to="/hummingbird/command/mpc_trajectory"/>
+      <remap from="/mavros/setpoint_raw/attitude" to="so3cmd"/>
+      
+      <remap from="~start_trigger" to="/move_base_simple/goal"/>
+      <remap from="~cmd_trigger" to="/hummingbird/goal"/>
+    </node> -->
+
+</group>
+
+</launch>

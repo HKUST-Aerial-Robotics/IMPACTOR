@@ -1,0 +1,43 @@
+physical_params:
+  quadrotor_mass: 0.74
+  payload_mass: 0.054
+  cable_length: 0.644
+  gravity: 9.81
+manager:
+  waypoints_num: 4
+  waypoint_0:
+    quad:
+      x: 0.0
+      y: 0.0
+      z: 0.644
+    load:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  waypoint_1:
+    quad:
+      x: 4.1
+      y: 0.0
+      z: 1.35
+    load:
+      x: 4.1
+      y: 0.0
+      z: 1.05
+  waypoint_2:
+    quad:
+      x: 4.4
+      y: 0.0
+      z: 1.35
+    load:
+      x: 4.4
+      y: 0.0
+      z: 1.05
+  waypoint_3:
+    quad:
+      x: 8.0
+      y: 0.0
+      z: 0.644
+    load:
+      x: 8.0
+      y: 0.0
+      z: 0.0

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>impact_plan</name>
+  <version>0.0.0</version>
+  <description>The impact_plan package</description>
+
+  <maintainer email="hwangeh@connect.ust.hk">haokun</maintainer>
+
+  <license>GPL3.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>message_runtime</build_depend>
+  <exec_depend>message_generation</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+
+</package>

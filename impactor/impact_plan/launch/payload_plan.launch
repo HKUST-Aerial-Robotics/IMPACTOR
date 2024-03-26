@@ -1,0 +1,56 @@
+<launch>
+    <arg name="map_size_x" value="40.0"/>
+    <arg name="map_size_y" value="20.0"/>
+    <arg name="map_size_z" value="5.0"/>
+    <!-- parameters of quadrotor -->
+    <arg name="init_x" value="0.0"/>
+    <arg name="init_y" value="0.0"/>
+    <arg name="init_z" value="0.644"/>
+
+    <!-- topic of odometry -->
+    <arg name="quadrotor_odom_topic" value="visual_slam/odom"/>
+    <arg name="payload_odom_topic"   value="payload_odom"/>
+
+    <!-- planning manager node -->
+    <node pkg="impact_plan" name="impact_plan_node" type="impact_plan_node" output="screen">
+        <!-- ROS topic remaping -->
+        <remap from="~planning/start"      to="planning/start"/>
+        <remap from="~planning/finish"     to="planning/finish"/>
+        <remap from="~planning/trajectory" to="planning/trajectory"/>
+        <remap from="~odom_world"          to="$(arg payload_odom_topic)"/>
+        <remap from="~grid_map/odom"       to="$(arg quadrotor_odom_topic)"/>
+        <remap from="~grid_map/cloud"      to="pcl_render_node/cloud"/>
+        <remap from="~grid_map/pose"       to="pcl_render_node/camera_pose"/> 
+        <remap from="~grid_map/depth"      to="pcl_render_node/depth"/>
+        <!-- Grid map parameters -->
+        <param name="grid_map/map_size_x"           value="$(arg map_size_x)" />
+        <param name="grid_map/map_size_y"           value="$(arg map_size_y)" />
+        <param name="grid_map/map_size_z"           value="$(arg map_size_z)" />
+        <rosparam file="$(find impact_plan)/launch/grid_map.yaml" command="load"/>
+        <!-- Manager parameters -->
+        <rosparam file="$(find impact_plan)/launch/payload_manager.yaml" command="load"/>
+        <!-- Opt parameters -->
+        <rosparam file="$(find impact_plan)/launch/payload_opt.yaml" command="load"/>
+    </node>
+
+    <!-- trajectory server -->
+    <node pkg="impact_plan" name="traj_server" type="traj_server" output="screen">
+        <remap from="~position_cmd"        to="planning/pos_cmd"/>
+        <remap from="~planning/trajectory" to="planning/trajectory"/>
+        <remap from="~planning/start"      to="planning/start"/>
+        <remap from="~planning/finish"     to="planning/finish"/>
+        <param name="traj_server/time_forward" value="1.0" type="double"/>
+    </node>
+    
+    <!-- uav simulator -->
+    <include file="$(find impact_plan)/launch/simulator.xml">
+        <arg name="map_size_x"               value="$(arg map_size_x)"/>
+        <arg name="map_size_y"               value="$(arg map_size_y)"/>
+        <arg name="map_size_z"               value="$(arg map_size_z)"/>
+        <arg name="init_x"                   value="$(arg init_x)"/>
+        <arg name="init_y"                   value="$(arg init_y)"/>
+        <arg name="init_z"                   value="$(arg init_z)"/>
+        <arg name="quadrotor_odometry_topic" value="$(arg quadrotor_odom_topic)" />
+        <arg name="payload_odometry_topic"   value="$(arg payload_odom_topic)" />
+    </include>
+</launch>

@@ -1,0 +1,93 @@
+map_resolution: 0.1
+obstacle:
+  # Gate parameters
+  ring_num: 1
+  ring_0:
+    x: 4.25
+    y: -0.04
+    z: 1.21
+    radius_x: 0.3
+    radius_y: 0.3
+    theta: 0.0
+  # Virtual wall parameters
+  wall_num: 10
+  wall_0:
+    x_l: -1.0
+    x_h: 10.0
+    y_l: -2.0
+    y_h: 2.0
+    z_l: 1.8
+    z_h: 2.0
+    theta: 0.0
+  wall_1:
+    x_l: -1.0
+    x_h: 10.0
+    y_l: -2.0
+    y_h: 2.0
+    z_l: -0.7
+    z_h: -0.2
+    theta: 0.0
+  wall_2:
+    x_l: -1.0
+    x_h: 10.0
+    y_l: -2.0
+    y_h: -1.8
+    z_l: -0.2
+    z_h: 2.0
+    theta: 0.0
+  wall_3:
+    x_l: -1.0
+    x_h: 10.0
+    y_l: 1.8
+    y_h: 2.0
+    z_l: -0.1
+    z_h: 2.0
+    theta: 0.0
+  wall_4:
+    x_l: 9.5
+    x_h: 10.0
+    y_l: -2.0
+    y_h: 2.0
+    z_l: -0.2
+    z_h: 2.0
+    theta: 0.0
+  wall_5:
+    x_l: -1.0
+    x_h: -0.5
+    y_l: -2.0
+    y_h: 2.0
+    z_l: -0.2
+    z_h: 2.0
+    theta: 0.0
+  wall_6:
+    x_l: 4.0
+    x_h: 4.5
+    y_l: -2.0
+    y_h: 2.0
+    z_l: -0.1
+    z_h: 1.0
+    theta: 0.0
+  wall_7:
+    x_l: 4.0
+    x_h: 4.5
+    y_l: -2.0
+    y_h: 2.0
+    z_l: 1.5
+    z_h: 2.0
+    theta: 0.0
+  wall_8:
+    x_l: 4.0
+    x_h: 4.5
+    y_l: -2.0
+    y_h: -0.3
+    z_l: 1.0
+    z_h: 1.5
+    theta: 0.0
+  wall_9:
+    x_l: 4.0
+    x_h: 4.5
+    y_l: 0.3
+    y_h: 2.0
+    z_l: 1.0
+    z_h: 1.5
+    theta: 0.0

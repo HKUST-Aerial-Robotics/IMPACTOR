@@ -1,0 +1,19 @@
+g: 9.81
+mass: 0.98
+gains/rot/x  : 2.0
+gains/rot/y  : 2.0
+gains/rot/z  : 1.0
+gains/ang/x  : 0.2
+gains/ang/y  : 0.2
+gains/ang/z  : 0.1
+corrections/z: 0.0
+corrections/r: 0.0
+corrections/p: 0.0
+
+mass_load: 0.2
+l_length: 0.6
+
+kx: [5.0, 5.0, 6.0]
+kv: [6.0, 6.0, 7.0]
+kq: [120, 120, 120]
+kw: [35, 35, 35]

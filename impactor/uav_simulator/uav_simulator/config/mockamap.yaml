@@ -1,0 +1,47 @@
+seed: 510
+update_freq: 1.0
+resolution: 0.1
+
+# map size unit meter
+x_length: 10
+y_length: 10
+z_length: 8
+
+# 1: perlin noise 3D
+type: 5
+
+# large value will be complex
+# typical 0.0 ~ 0.5 
+# complexity: 0.02
+# infill persentage
+# typical: 0.4 ~ 0.0
+# fill: 0.3
+# large value will have more detail
+# fractal: 1
+# for fractal attenuation
+# typical: 0.0 ~ 0.5
+# attenuation: 0.1
+
+# # 2: perlin box random map
+# type: 2
+# width_min: 0.6
+# width_max: 1.5
+# obstacle_number: 50
+
+# # 3: 2d maze still developing
+# type: 3
+# road_width: 0.5
+# add_wall_x: 0
+# add_wall_y: 1
+# maze_type: 1
+
+# # 4: maze 3d
+numNodes: 40
+connectivity: 0.1
+nodeRad: 1
+roadRad: 10
+
+# # 5: random gates
+numGates: 10
+gateSize: 2
+maxAngle: 10
