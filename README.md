@@ -1,14 +1,14 @@
 # IMPACTOR: <u>IMP</u>act-<u>A</u>ware Planning and <u>C</u>on<u>T</u>r<u>O</u>l for Aerial <u>R</u>obots with Suspended Payloads
 ## News
-- Updated paper information.
-## Content
-* [TODO_List](#todo)
-* [Introduction](#introduction)
+- 26 Mar., 2024: Released the impact-aware planning algorithm and the early access version paper.
 ## TODO
-- [ ] Update user guide and preprint information.
-- [ ] Release impact-aware planning algorithms.
+- [x] Release impact-aware planning algorithms.
+- [ ] Update user guide.
 - [ ] Release simulation code. 
 - [ ] Release hybrid MPC code.
+- [ ] Release Docker image.
+## Content
+* [Introduction](#introduction)
 ## Introduction
 <div align=center>
   <img src="images/gif-scenario_1.gif" width=400px>
@@ -21,7 +21,7 @@ __Authors__: [Haokun Wang](https://haokun-wang.com)<sup>1+</sup>, Haojia Li<sup>
 
 <small><sup>1</sup>[HKUST Aerial Robotics Group](https://uav.hkust.edu.hk/), <sup>2</sup> [SYSU STAR Lab](https://boyuzhou.net/), <sup>3</sup> [ZJU FAST Lab](http://zju-fast.com/), .</small>
 
-__Paper__: arXiv
+__Paper__: arXiv, [IEEE Early Access](https://ieeexplore.ieee.org/document/10478625)
 
 __Supplementary Video__: [YouTube](https://youtu.be/k_XGQyrNh9I?si=K2775t8ui0WClqqv), [Bilibili](https://www.bilibili.com/video/BV1zg4y1L7dC/?share_source=copy_web&vd_source=4a496bdfc1980dd80977a281d5c963c0)
 
