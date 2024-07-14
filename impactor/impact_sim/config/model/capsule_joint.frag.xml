@@ -1,0 +1,65 @@
+  <link name="{joint1_name}_extra">
+    <pose> {x} {y} {height} 0 0 0</pose>
+    <inertial>
+      <!-- HACK: inertias are not consistent -->
+      <mass>1e-6</mass>
+      <inertia>
+        <ixx>1e-6</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1e-6</iyy>
+        <iyz>0</iyz>
+        <izz>1e-6</izz>
+      </inertia>
+    </inertial>
+  </link>
+  <joint name="{joint1_name}_{joint2_name}_joint_x" type="revolute">
+    <pose> 0 0 0 0 0 0 </pose>
+    <child>{joint2_name}</child>
+    <parent>{joint1_name}_extra</parent>
+    <axis>
+      <xyz> 1 0 0 </xyz>
+      <limit>
+        <effort>{effort_int}</effort>
+        <lower>-{limit}</lower>
+        <upper>{limit}</upper>
+      </limit>
+      <dynamics>
+        <damping> {damping} </damping>
+        <friction> {friction} </friction>
+        <spring_reference> 0 </spring_reference>
+        <spring_stiffness> {spring_stiffness} </spring_stiffness>
+      </dynamics>
+      <use_parent_model_frame>1</use_parent_model_frame>
+    </axis>
+  </joint>
+  
+  <joint name="{joint1_name}_{joint2_name}_joint_y" type="revolute">
+    <pose> 0 0 0 0 0 0 </pose>
+    <child>{joint1_name}_extra</child>
+    <parent>{joint1_name}</parent>
+    <axis>
+      <xyz> 0 1 0 </xyz>
+      <limit>
+        <effort>{effort_int}</effort>
+        <lower>-{limit}</lower>
+        <upper>{limit}</upper>
+      </limit>
+      <dynamics>
+        <damping> {damping} </damping>
+        <friction> {friction} </friction>
+        <spring_reference> 0 </spring_reference>
+        <spring_stiffness> {spring_stiffness} </spring_stiffness>
+      </dynamics>
+      <use_parent_model_frame>1</use_parent_model_frame>
+    </axis>
+  </joint>
+<!-- 
+  <joint name="{joint1_name}_{joint2_name}_joint" type="universal">
+    <pose> 0 0 0 0 0 0 </pose>
+    <child>{joint2_name}</child>
+    <parent>{joint1_name}</parent>
+    <axis>
+      <use_parent_model_frame>1</use_parent_model_frame>
+    </axis>
+  </joint> -->

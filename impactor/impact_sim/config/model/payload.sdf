@@ -1,0 +1,48 @@
+<sdf version='1.6'>
+  <model name='payload'>
+    <link name="payload_link">
+        <inertial>
+          <pose frame=''>0 0 0 0 0 0</pose>
+          <mass>0.150</mass>
+          <inertia>
+            <ixx>0.00017655</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00017655</iyy>
+            <iyz>0</iyz>
+            <izz>0.0000528</izz>
+          </inertia>
+        </inertial>
+        <visual name='cylinder'>
+          <pose frame=''> 0 0 0 0 0 0 </pose>
+          <geometry>
+            <cylinder>
+            <radius>0.04</radius>
+            <length>0.15</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <diffuse>0.98 0.5 0.45 1.0</diffuse>
+          </material>
+        </visual>
+        <collision name='payload_link_cylinder'>
+          <pose frame=''> 0 0 0 0 0 0 </pose>
+          <geometry>
+            <cylinder>
+            <radius>0.04</radius>
+            <length>0.15</length>
+            </cylinder>
+          </geometry>
+          
+          <surface>
+            <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>0.5</mu2>
+            </ode>
+            </friction>
+          </surface>
+        </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,100 @@
+rope:
+  name: "rope_0"
+  num_segments: 31
+  segment_length: [0.01,0.015,0.015,0.015,0.015,
+                   0.015,0.015,0.015,0.015,0.015,
+                   0.015,0.015,0.015,0.015,0.015,
+                   0.015,0.015,0.015,0.015,0.015,
+                   0.015,0.015,0.015,0.015,0.015,
+                   0.015,0.015,0.015,0.015,0.015,
+                   0.015]
+  link_mass: [0.0001,0.0001,0.0001,0.0001,0.0001,
+              0.0001,0.0001,0.0001,0.0001,0.0001,
+              0.0001,0.0001,0.0001,0.0001,0.0001,
+              0.0001,0.0001,0.0001,0.0001,0.0001,
+              0.0001,0.0001,0.0001,0.0001,0.0001,
+              0.0001,0.0001,0.0001,0.0001,0.0001,
+              0.0001]
+  rope_radius: 0.005
+  joint_limit: 100         # Unknown effect
+  joint_damping: 0.001      # Unknown effect
+  joint_friction: 0         # Unknown effect
+  spring_stiffness: 0       # Unknown effect
+  rope_height: 3.0          # Gets overwritten - no effect
+  rope_x: 0                 # Gets overwritten - no effect
+  rope_y: 0.5               # Gets overwritten - no effect
+payload:
+  name: "payload"
+  urdf_path: "src/payload_sim/config/model/payload.sdf"
+quadrotor:
+  name: "drone_0"
+  propellers:
+    rotor_1:
+      pose:
+        pos: [0.15, 0.0, 0.0]
+        rpy: [0.0, 0.0, 0.0]
+      thrust_radio: 1.58e-8
+      moment_ratio: 1.0e-10
+    rotor_2:
+      pose:
+        pos: [-0.15, 0.0, 0.0]
+        rpy: [0.0, 0.0, 0.0]
+      thrust_radio: 1.58e-8
+      moment_ratio: 1.0e-10
+    rotor_3:
+      pose:
+        pos: [0.0, 0.15, 0.0]
+        rpy: [0.0, 0.0, 0.0]
+      thrust_radio: 1.58e-8
+      moment_ratio: -1.0e-10
+    rotor_4:
+      pose:
+        pos: [0.0, -0.15, 0.0]
+        rpy: [0.0, 0.0, 0.0]
+      thrust_radio: 1.58e-8
+      moment_ratio: -1.0e-10
+    # rotor_1:
+    #   pose:
+    #     pos: [0.106065, 0.106065, 0.0]
+    #     rpy: [0.0, 0.0, 0.0]
+    #   thrust_radio: 1.0
+    #   moment_ratio: 0.0245
+    # rotor_2:
+    #   pose:
+    #     pos: [-0.106065, -0.106065, 0.0]
+    #     rpy: [0.0, 0.0, 0.0]
+    #   thrust_radio: 1.0
+    #   moment_ratio: 0.0245
+    # rotor_3:
+    #   pose:
+    #     pos: [-0.106065, 0.106065, 0.0]
+    #     rpy: [0.0, 0.0, 0.0]
+    #   thrust_radio: 1.0
+    #   moment_ratio: -0.0245
+    # rotor_4:
+    #   pose:
+    #     pos: [0.106065, -0.106065, 0.0]
+    #     rpy: [0.0, 0.0, 0.0]
+    #   thrust_radio: 1.0
+    #   moment_ratio: -0.0245
+  collision_model: "box"
+  urdf_path: "src/payload_sim/config/model/quadrotor.urdf"
+  rope_base:
+    pos: [0.0, 0.0, -0.125]
+    rpy: [0.0, 0.0, 0.0]
+  payload_base:
+    pos: [0.0, 0.0, -0.08]
+    rpy: [0.0, 0.0, 0.0]
+env:
+  mbp_dt: 0.0005
+  step_dt: 0.0025              # Simulation timestep
+  duration: 100.0              # Simulation duration
+  quadrotor:
+    target_pos: [0.0, 2.0, 1.0]
+  use_remote_control: True
+  target_realtime_rate: 1.0       # Rate to run the simulation. 0.0 means as fast as possible. 1.0 to track real time. 2 to run twice as fast as real time. 0.5 for half speed, etc.
+  publish_every_time_step: True
+  penetration_allowance: 0.01
+  stiction_tolerance: 0.01
+  visualization: True
+  meshcat: False
