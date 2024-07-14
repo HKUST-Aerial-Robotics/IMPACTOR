@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+     <!-- <node name="rviz" pkg="rviz" type="rviz" output="screen"
+           args="-d $(find poly_planner)/config/rviz_config.rviz"> 
+    </node> -->
+    <node pkg="poly_planner" type="poly_planner_node" name="poly_planner" output="screen">
+        <!-- node parameters -->
+        <rosparam file="$(find poly_planner)/config/poly_planner_params.yaml" command="load" />
+    </node>
+
+    <node pkg="payload_mpc_controller" type="mpc_controller_node" name="mpc_controller_node" output="screen">
+      <rosparam command="load" file="$(find payload_mpc_controller)/config/mpc.yaml" />
+      <rosparam command="load" file="$(find payload_mpc_controller)/config/model.yaml" />
+      
+      <remap from="~odom" to="/ekf/ekf_odom"/>
+      <remap from="~cable_info/data" to="/ekf/cable_info"/>
+      <remap from="~load_imu/data" to="/ekf/load_imu"/>
+      <remap from="~payload_odom" to="/ekf/odom_payload"/>
+		  <remap from="~traj" to="/trajectory_generator_node/trajectory"/>
+      
+      <!-- <remap from="~start_trigger" to="/traj_start_trigger"/>
+      <remap from="~cmd_trigger" to="/hummingbird/goal"/> -->
+    </node>
+
+</launch>

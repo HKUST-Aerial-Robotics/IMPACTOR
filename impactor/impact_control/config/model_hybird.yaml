@@ -1,0 +1,10 @@
+# Model parameters
+# !!! if the model parameters has been changed, 
+# !!! please re-run the quadrotor_payload_mpc_codegen to re-generate the MPC model code. !!!  
+mass_q: 1.212
+l_length: 0.68683807
+mass_l: 0.233
+# mass_l: 0.130
+gravity: 9.795
+step_N: 20
+step_T: 0.005

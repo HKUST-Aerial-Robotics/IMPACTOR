@@ -1,0 +1,114 @@
+# using receved time (only for one traj )
+use_simulation: false 
+use_fix_yaw: false   # using fix yaw. 
+
+# Cost on states
+Q_pos_xy:   200.0    # Cost for horizontal positon error //default: 200     0.5 
+Q_pos_z:  200.0    # Cost for horizontal positon error //default: 200     0.5 
+Q_attitude_rp:  180.0   # Cost for attitude error           //default: 50     0.1
+Q_attitude_yaw:  180.0    # Cost for attitude error           //default: 50     0.1
+Q_velocity:  20.0   # Cost for velocity error           //default: 10    0.05
+
+Q_payload_xy:  0.0
+Q_payload_z: 0.0
+Q_payload_velocity: 0.0
+Q_cable: 10.0
+Q_dcable: 3.0
+
+# Cost on Inputs
+R_thrust:    1  # Cost on thrust input            //default: 1
+R_pitchroll:  1     # Cost on pitch and roll rate
+R_yaw:        1     # Cost on yaw ratte
+
+# state predictor
+control_command_delay: 0.05
+
+# Exponential scaling: W_i = W * exp(-i/N * cost_scaling).
+# cost_scaling = 0 means no scaling W_i = W. 
+state_cost_exponential: 0.5     # Scaling for state costs
+input_cost_exponential: 0.5     # scaling for input costs
+
+# Limits for inputs
+max_bodyrate_xy:    3.0       # ~ pi [rad/s]
+max_bodyrate_z:     1.5         # ~ pi*2/3 [rad/s]
+min_thrust:         1.0       # ~ 20% gravity [N]
+max_thrust:         35.0      # ~ 200% gravity [N]
+
+# use ending pos for better ending tracking performance)
+use_trajectory_ending_pos: true
+
+# Print information such as timing to terminal
+print_info:   true
+
+# control fsm param
+ctrl_freq_max: 100.0
+
+pos_x: -6.0
+pos_y: 1.0
+takeoff_height: 2.0
+
+# control fsm param for real-world experiments
+max_manual_vel: 1.0
+max_angle: 30  # Attitude angle limit in degree. A negative value means no limit.
+low_voltage: -0.1 # 4S battery
+
+filter:
+    sample_freq_quad_acc: 200.0
+    sample_freq_quad_omg: 200.0
+    sample_freq_load_acc: 400.0
+    sample_freq_load_omg: 400.0
+    sample_freq_rpm: 200.0
+    sample_freq_cable: 400.0
+    sample_freq_dcable: 400.0
+
+    cutoff_freq_quad_acc: 0.0
+    cutoff_freq_quad_omg: 25.0 #0.0 means no filter
+    cutoff_freq_load_acc: 25.0
+    cutoff_freq_load_omg: 25.0
+    cutoff_freq_rpm: 25.0
+    cutoff_freq_cable: 25.0
+    cutoff_freq_dcable: 25.0
+
+force_estimator: # *
+    kf: 1.70922868e-8 # Also used in the thrust_model
+
+    sample_freq_fq: 200.0
+    sample_freq_fl: 200.0
+    cutoff_freq_fq: 0.0
+    cutoff_freq_fl: 0.0
+    imu_body_length: 0.1
+    use_force_estimator: true
+    max_force: 2.0
+    max_queue: 80
+    force_observer_freq: 200.0
+    var_weight: 40.0
+
+rc_reverse: # *
+    roll: false
+    pitch: true
+    yaw: false
+    throttle: true
+
+thrust_model: # The model that maps thrust signal u(0~1) to real thrust force F(Unit:N): F=K1*Voltage^K2*(K3*u^2+(1-K3)*u). 
+    print_value: false # display the value of “thr_scale_compensate” or “hover_percentage” during thrust model estimating.
+    accurate_thrust_model: 0
+    # 0 means use the scale factor to map thrust to commmand without online calibration
+    # 1 means use the scale factor to map thrust to commmand with online calibration(use the rotor speed to calibrate the scale factor)
+    # 2 means use the scale factor to map thrust to commmand with online calibration(use the IMU calibrate the scale factor. Confilct with the force estimator)
+    # 3 means use the accurate thrust model to map thrust to commmand(Not implemented yet. DON'T use it)
+
+    K1: 0.7583 # Needs precise calibration!
+    K2: 1.6942 # Needs precise calibration!
+    K3: 0.6786 # Needs precise calibration! K3 equals THR_MDL_FAC in https://docs.px4.io/master/en/config_mc/pid_tuning_guide_multicopter.html.
+    # approximate thrust mapping parameters
+    hover_percentage: 0.174050  # Thrust percentage in Stabilize/Arco mode WITHOUT Payload
+    # hover_percentage: 0.3
+    filter_factor: 0.2
+    noisy_imu: false # *
+
+msg_timeout:
+    odom: 0.5
+    rc:   0.5
+    cmd:  0.5
+    imu:  0.5
+    bat:  0.5

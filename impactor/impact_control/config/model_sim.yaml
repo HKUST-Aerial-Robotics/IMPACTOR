@@ -1,0 +1,15 @@
+# Model parameters
+# !!! if the model parameters has been changed, 
+# !!! please re-run the quadrotor_payload_mpc_codegen to re-generate the MPC model code. !!!  
+mass_q: 0.775
+l_length: 0.535
+# mass_l: 0.233
+mass_l: 0.150
+gravity: 9.795
+step_N: 20
+step_T: 0.041
+force_estimator: # *
+    USE_CONSTANT_MOMENT: 1 # Same as the code
+    #0 mean close
+    #1 mean use fl as constant moment
+    #2 mean use fq as constant moment

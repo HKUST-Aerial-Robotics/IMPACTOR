@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+    <node pkg="payload_mpc_controller" type="mpc_controller_node" name="mpc_controller_node" output="screen">
+      <rosparam command="load" file="$(find payload_mpc_controller)/config/mpc_onboard.yaml" />
+      <rosparam command="load" file="$(find payload_mpc_controller)/config/model.yaml" />
+      
+      <remap from="~odom" to="/ekf/ekf_odom"/>
+      <remap from="~cable_info/data" to="/cable_imu/cable_info"/>
+      <remap from="~load_imu/data" to="/cable_imu/load_imu"/>
+      <remap from="~payload_odom" to="/cable_imu/odom_payload"/>
+		  <remap from="~traj" to="/trajectory_generator_node/trajectory"/>
+      
+      <!-- <remap from="~start_trigger" to="/traj_start_trigger"/>
+      <remap from="~cmd_trigger" to="/hummingbird/goal"/> -->
+    </node>
+</launch>
