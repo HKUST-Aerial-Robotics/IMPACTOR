@@ -15,6 +15,7 @@ find_package(catkin REQUIRED
   cv_bridge
   message_generation
   message_filters
+  quadrotor_msgs
 )
 
 include_directories(
